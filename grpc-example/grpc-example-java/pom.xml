@@ -38,6 +38,8 @@
                     <unmanagedServices>
                         <helloworld.GreeterService>http://127.0.0.1:${hello-impl.http.port}</helloworld.GreeterService>
                     </unmanagedServices>
+					<serviceGatewayAddress>0.0.0.0</serviceGatewayAddress>
+					<serviceAddress>0.0.0.0</serviceAddress>
                 </configuration>
             </plugin>
             <plugin>
