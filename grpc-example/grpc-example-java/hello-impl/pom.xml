@@ -65,6 +65,11 @@
             <version>${akka.http.version}</version>
         </dependency>
 
+		<dependency>
+			<groupId>com.lightbend.lagom</groupId>
+			<artifactId>lagom-javadsl-pubsub_${scala.binary.version}</artifactId>
+		</dependency>
+
     </dependencies>
 
     <build>
@@ -105,7 +110,12 @@
                 <configuration>
                     <lagomService>true</lagomService>
                     <serviceHttpPort>${hello-impl.http.port}</serviceHttpPort>
+                    <!--
                     <serviceAddress>127.0.0.1</serviceAddress>
+                    -->
+					<serviceAddress>0.0.0.0</serviceAddress>
+					<serviceHttpPort>11000</serviceHttpPort>
+					<serviceGatewayAddress>0.0.0.0</serviceGatewayAddress>
                 </configuration>
             </plugin>
 
