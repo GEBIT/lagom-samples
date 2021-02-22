@@ -17,6 +17,7 @@
     </modules>
 
     <build>
+        <directory>target-xxx</directory>
         <plugins>
 
             <plugin>
