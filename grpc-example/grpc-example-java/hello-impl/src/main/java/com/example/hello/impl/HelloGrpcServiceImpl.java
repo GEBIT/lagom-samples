@@ -64,7 +64,7 @@ public class HelloGrpcServiceImpl extends AbstractGreeterServiceRouter {
 			actorSystem.scheduler()
 					.scheduleWithFixedDelay(Duration.ofSeconds(5),
 							// setting the following value to 90 will cause the connection error problem at the clients
-							Duration.ofSeconds(90),
+							Duration.ofSeconds(5),
 							this::publishStatus,
 							executionContext);
 

@@ -71,10 +71,11 @@ public class GrpcStatusTopic {
 		PubSubRef<StatusResponse> tRef = refFor();
 
 		return tRef.hasAnySubscribers().thenApply(hasAnySubscribers -> {
-			if (!hasAnySubscribers) {
+			if (hasAnySubscribers) {
+				tRef.publish(StatusResponse.newBuilder().setStatus(aStatus).build());
+			} else {
 				LOGGER.info("no active subscriptions");
 			}
-			tRef.publish(StatusResponse.newBuilder().setStatus(aStatus).build());
 			return Done.getInstance();
 		});
 	}
